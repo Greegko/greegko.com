@@ -1,0 +1,22 @@
+{
+  "name": "",
+  "private": true,
+  "scripts": {
+    "start": "concurrently npm:web:serve npm:web:type-checking",
+    "build": "npm run web:build",
+    "web:serve": "npm run serve --prefix packages/web",
+    "web:type-checking": "npm run type-checking --prefix packages/web",
+    "web:build": "npm run build --prefix packages/web",
+    "prepare": "for P in packages/*/; do (cd $P && npm run prepare); done"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "dependencies": {
+    "concurrently": "8.0.1"
+  },
+  "devDependencies": {
+    "@trivago/prettier-plugin-sort-imports": "4.1.1",
+    "prettier": "2.8.8"
+  }
+}
