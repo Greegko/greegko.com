@@ -16,6 +16,8 @@
     "@shoelace-style/shoelace": "2.5.2",
     "shoelace": "0.1.1",
     "solid-js": "1.7.8",
+    "sass": "1.66.1",
+    "@solidjs/router": "0.8.3",
     "tailwindcss": "3.3.3",
     "vite": "4.4.4",
     "vite-plugin-solid": "2.7.0",

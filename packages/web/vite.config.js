@@ -12,7 +12,7 @@ export default defineConfig({
   plugins: [
     solid(),
     viteStaticCopy({
-      targets: [{ src: "node_modules/@shoelace-style/shoelace/dist/assets", dest: "shoelace" }],
+      targets: [{ src: "../../node_modules/@shoelace-style/shoelace/dist/assets", dest: "shoelace" }],
     }),
   ],
 });

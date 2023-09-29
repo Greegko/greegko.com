@@ -1,7 +1,7 @@
 import Dixie, { Table } from "dexie";
 
 export interface DexieDB {
-  tables: Record<string, { id?: number }>;
+  tables: Record<string, { id?: string & { __id: string } }>;
 }
 
 type ArrayType<T> = T extends (infer R)[] ? R : T;

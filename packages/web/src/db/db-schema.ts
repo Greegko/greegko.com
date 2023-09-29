@@ -1,10 +1,5 @@
-export interface Quest {
-  id?: number;
-  name: string;
-}
+import { General, Quest, QuestEntry } from "../interfaces";
 
-export interface History {
-  id?: number;
-  questId?: number;
-  timeStamp: string;
-}
+export type QuestTable = Quest;
+export type HistoryTable = QuestEntry;
+export type GeneralTable = General;
