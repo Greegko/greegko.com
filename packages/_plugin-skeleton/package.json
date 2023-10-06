@@ -1,5 +1,5 @@
 {
-  "name": "@greegko/credit-system",
+  "name": "@greegko/plugin-skeleton",
   "version": "1.0.0",
   "private": true,
   "types": "./dist/public-api.d.ts",
