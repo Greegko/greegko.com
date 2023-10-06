@@ -16,8 +16,6 @@ export const App = (props: { modules: Module[] }) => {
   createEffect(() => {
     const route = activeRoute();
 
-    console.log(route);
-
     setTabs(route ? route[1].tabs || null : null);
   });
 
