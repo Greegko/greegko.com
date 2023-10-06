@@ -1,11 +1,11 @@
 {
-  "include": ["./src/**/*.ts", "./src/**/*.tsx"],
-  "files": ["./src/public-api.ts"],
+  "include": ["../../_plugin-skeleton/src/**/*.ts", "../../_plugin-skeleton/src/**/*.tsx"],
+  "files": ["../../_plugin-skeleton/src/public-api.ts"],
   "compilerOptions": {
     "module": "ESNext",
-    "baseUrl": "./src",
-    "rootDir": "./src",
-    "outDir": "./dist",
+    "baseUrl": "../../_plugin-skeleton/src",
+    "rootDir": "../../_plugin-skeleton/src",
+    "outDir": "../../_plugin-skeleton/dist",
     "strict": true,
     "composite": true,
     "declaration": true,
