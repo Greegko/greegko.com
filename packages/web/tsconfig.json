@@ -13,6 +13,5 @@
     "jsxImportSource": "solid-js",
     "types": ["vite/client"],
     "paths": {}
-  },
-  "references": [{ "path": "../credit-system" }]
+  }
 }

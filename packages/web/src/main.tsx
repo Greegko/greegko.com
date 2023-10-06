@@ -1,6 +1,6 @@
 import { render } from "solid-js/web";
 
-import { creditSystemModule } from "@greegko/credit-system";
+import { creditSystemModule } from "@greegko-plugins/credit-system";
 
 import { App } from "./components/app";
 import "./shoelace";

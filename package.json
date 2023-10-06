@@ -3,15 +3,17 @@
   "private": true,
   "scripts": {
     "start": "concurrently npm:packages:build:watch npm:web:serve npm:web:type-checking",
-    "packages:build": "tsc -b ./packages/core ./packages/credit-system",
-    "packages:build:watch": "tsc -b -w ./packages/core ./packages/credit-system",
+    "packages:build": "tsc -b ./packages/plugins/*",
+    "packages:build:watch": "tsc -b -w ./packages/core ./packages/plugins/*",
     "build": "npm run packages:build && npm run web:build",
     "web:serve": "npm run serve --prefix packages/web",
     "web:type-checking": "npm run type-checking --prefix packages/web",
     "web:build": "npm run build --prefix packages/web"
   },
   "workspaces": [
-    "packages/*"
+    "packages/core",
+    "packages/web",
+    "packages/plugins/*"
   ],
   "dependencies": {
     "concurrently": "8.0.1"
