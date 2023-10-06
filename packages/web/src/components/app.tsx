@@ -1,10 +1,25 @@
 import { Outlet, Route, Router, Routes } from "@solidjs/router";
+import { Component, For, Show, createEffect, createSignal } from "solid-js";
+
+import { Module, Page, Tab } from "@greegko/core";
 
 import { Nav } from "./nav";
-import { HistoryPage } from "./pages/history";
-import { QuestsPage } from "./pages/quests/quests";
 
-export const App = () => {
+const [activeRoute, setActiveRoute] = createSignal<[Module, Page] | null>(null);
+
+export const App = (props: { modules: Module[] }) => {
+  const [tabs, setTabs] = createSignal<Tab[] | null>(null);
+  const modulePath = () => activeRoute()?.[0].url || "";
+  const modules = props.modules;
+
+  createEffect(() => {
+    const route = activeRoute();
+
+    if (!route) return;
+
+    setTabs(route[1].tabs || null);
+  });
+
   return (
     <Router>
       <Routes>
@@ -12,17 +27,33 @@ export const App = () => {
           path="/"
           element={
             <>
-              <Nav />
+              <Show when={tabs()}>
+                <Nav modulePath={modulePath()} tabs={tabs()!} />
+              </Show>
               <PageWrapper />
             </>
           }
         >
-          <Route path="/" component={QuestsPage} />
-          <Route path="/history" component={HistoryPage} />
+          <For each={modules}>
+            {module => (
+              <Route path={module.url}>
+                <For each={module.pages}>
+                  {page => <Route path={page.url} component={setPageWrapper(module, page)}></Route>}
+                </For>
+              </Route>
+            )}
+          </For>
         </Route>
       </Routes>
     </Router>
   );
+};
+
+const setPageWrapper = (m: Module, p: Page): Component => {
+  return () => {
+    setActiveRoute([m, p]);
+    return p.component({});
+  };
 };
 
 export const PageWrapper = () => {

@@ -1,0 +1,13 @@
+{
+  "name": "@greegko/core",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "types": "./dist/public-api.d.ts",
+  "main": "./dist/public-api.js",
+  "peer-dependencies": {
+    "dexie": "3.2.4",
+    "dexie-relationships": "1.2.11",
+    "solid-js": "1.7.8"
+  }
+}

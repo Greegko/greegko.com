@@ -1,7 +1,8 @@
 import { For } from "solid-js";
 
+import { useDexieArrayQuery } from "@greegko/core";
+
 import { db } from "../../../db/db";
-import { useDexieArrayQuery } from "../../../hooks/dexie";
 import { QuestDisplay } from "./quests-display";
 
 export const QuestsPage = () => {

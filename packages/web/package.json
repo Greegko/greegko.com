@@ -1,14 +1,15 @@
 {
-  "name": "web",
+  "name": "@greegko/web",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "build": "vite build",
     "serve": "vite serve",
-    "type-checking": "tsc -w",
-    "prepare": "true"
+    "type-checking": "tsc -w"
   },
   "dependencies": {
+    "@greegko/core": "*",
+    "@greegko/credit-system": "*",
     "dexie": "3.2.4",
     "dexie-relationships": "1.2.11",
     "solid-dexie": "0.0.5",

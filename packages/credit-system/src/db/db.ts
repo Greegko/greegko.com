@@ -1,16 +1,14 @@
-import { Dexie } from "dexie";
-import DexieRelationships from "dexie-relationships";
+import { DexieDB, createDbConnection } from "@greegko/core";
 
 import { QuestType } from "../interfaces";
 import { GeneralTableEntryID } from "../model/quest-manager";
 import { GeneralTable, HistoryTable, QuestTable } from "./db-schema";
-import { DexieLocal } from "./dixie-local";
 
-interface CreditSystemDb {
+interface CreditSystemDb extends DexieDB {
   tables: { quests: QuestTable; history: HistoryTable; general: GeneralTable };
 }
 
-export const db = new Dexie("CreditSystemDb", { addons: [DexieRelationships as any] }) as DexieLocal<CreditSystemDb>;
+export const db = createDbConnection<CreditSystemDb>("CreditSystemDb");
 
 db.version(1).stores({
   quests: "++id",

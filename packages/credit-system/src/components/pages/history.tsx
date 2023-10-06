@@ -1,7 +1,8 @@
 import { For } from "solid-js";
 
+import { useDexieArrayQuery } from "@greegko/core";
+
 import { db } from "../../db/db";
-import { useDexieArrayQuery } from "../../hooks/dexie";
 
 export const HistoryPage = () => {
   const questsHistory = useDexieArrayQuery(() => db.history.toArray());

@@ -1,18 +1,21 @@
 {
+  "files": ["./src/public-api.ts"],
+  "include": ["./src/**/*.tsx", "./src/**/*.ts"],
   "compilerOptions": {
-    "baseUrl": "./",
+    "rootDir": "./src",
+    "baseUrl": "./src",
+    "outDir": "./dist",
     "strict": true,
+    "composite": true,
+    "declaration": true,
+    "module": "ESNext",
     "target": "esnext",
     "moduleResolution": "bundler",
     "removeComments": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "noUnusedLocals": true,
-    "noEmit": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
     "types": ["vite/client"],
     "paths": {}
-  },
-  "references": [{ "path": "../credit-system" }]
+  }
 }
