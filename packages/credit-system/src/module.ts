@@ -9,6 +9,8 @@ const SharedTabs = [
 ];
 
 export const creditSystemModule: Module = {
+  name: "Credit System",
+  icon: "credit-card-2-back",
   url: "credit-system",
   pages: [
     { url: "/", tabs: SharedTabs, component: QuestsPage },

@@ -1,9 +1,10 @@
 import { Outlet, Route, Router, Routes } from "@solidjs/router";
-import { Component, For, Show, createEffect, createSignal } from "solid-js";
+import { For, Show, createEffect, createSignal } from "solid-js";
 
 import { Module, Page, Tab } from "@greegko/core";
 
 import { Nav } from "./nav";
+import { PluginSelector } from "./plugin-selector";
 
 const [activeRoute, setActiveRoute] = createSignal<[Module, Page] | null>(null);
 
@@ -15,9 +16,9 @@ export const App = (props: { modules: Module[] }) => {
   createEffect(() => {
     const route = activeRoute();
 
-    if (!route) return;
+    console.log(route);
 
-    setTabs(route[1].tabs || null);
+    setTabs(route ? route[1].tabs || null : null);
   });
 
   return (
@@ -34,11 +35,17 @@ export const App = (props: { modules: Module[] }) => {
             </>
           }
         >
+          <Route path="/" element={(setActiveRoute(null), (<PluginSelector modules={props.modules} />))}></Route>
           <For each={modules}>
             {module => (
               <Route path={module.url}>
                 <For each={module.pages}>
-                  {page => <Route path={page.url} component={setPageWrapper(module, page)}></Route>}
+                  {page => (
+                    <Route
+                      path={page.url}
+                      element={(setActiveRoute([module, page]), (<page.component></page.component>))}
+                    ></Route>
+                  )}
                 </For>
               </Route>
             )}
@@ -47,13 +54,6 @@ export const App = (props: { modules: Module[] }) => {
       </Routes>
     </Router>
   );
-};
-
-const setPageWrapper = (m: Module, p: Page): Component => {
-  return () => {
-    setActiveRoute([m, p]);
-    return p.component({});
-  };
 };
 
 export const PageWrapper = () => {
