@@ -13,10 +13,10 @@ jobs:
       - run: npm install
       - run: npm run build
 
-      - name: Sync files
+      - name: push to ftp
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ftp://greegko.com
           username: u584298536
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: ./packages/web/dist
+          local-dir: ./packages/web/dist/
