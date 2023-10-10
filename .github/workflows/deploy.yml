@@ -16,6 +16,6 @@ jobs:
       - name: Sync files
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: ftp://greegko.com
+          server: ftp://185.166.188.213
           username: u584298536
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
