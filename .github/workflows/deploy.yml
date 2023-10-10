@@ -19,3 +19,4 @@ jobs:
           server: ftp://185.166.188.213
           username: u584298536
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
+          local-dir: ./packages/web/dist
