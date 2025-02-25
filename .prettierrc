@@ -2,8 +2,8 @@
   "trailingComma": "all",
   "printWidth": 120,
   "arrowParens": "avoid",
-  "importOrder": ["<THIRD_PARTY_MODULES>", "^@(greegko)", "^\\.\\.?/.*(?<!scss)$", "scss"],
+  "importOrder": ["<THIRD_PARTY_MODULES>", "\\."],
   "importOrderSeparation": true,
-  "importOrderParserPlugins": ["classProperties", "typescript", "decorators-legacy", "jsx"],
+  "importOrderParserPlugins": ["typescript", "jsx"],
   "importOrderSortSpecifiers": true
 }
