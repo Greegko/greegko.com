@@ -1,27 +1,17 @@
 {
-  "name": "@greegko/web",
-  "version": "1.0.0",
-  "private": true,
+  "type": "module",
   "scripts": {
-    "build": "vite build",
-    "serve": "vite serve",
-    "type-checking": "tsc -w"
+    "start": "vite",
+    "build": "vite build"
   },
   "dependencies": {
-    "@greegko/core": "*",
-    "@greegko/credit-system": "*",
-    "dexie": "3.2.4",
-    "dexie-relationships": "1.2.11",
-    "solid-dexie": "0.0.5",
-    "rambda": "7.5.0",
-    "@shoelace-style/shoelace": "2.5.2",
-    "shoelace": "0.1.1",
-    "solid-js": "1.7.8",
-    "sass": "1.66.1",
-    "@solidjs/router": "0.8.3",
-    "tailwindcss": "3.3.3",
-    "vite": "4.4.4",
-    "vite-plugin-solid": "2.7.0",
-    "vite-plugin-static-copy": "0.16.0"
+    "solid-js": "1.9.5"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "4.0.8",
+    "tailwindcss": "4.0.8",
+    "typescript": "5.7.3",
+    "vite": "6.1.1",
+    "vite-plugin-solid": "2.11.2"
   }
 }

@@ -1,17 +1,18 @@
 {
   "compilerOptions": {
-    "baseUrl": "./",
-    "strict": true,
     "target": "esnext",
+    "module": "esnext",
     "moduleResolution": "bundler",
+    "sourceMap": true,
+    "strict": true,
     "removeComments": false,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
-    "noUnusedLocals": true,
     "noEmit": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": false,
+    "resolveJsonModule": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": ["vite/client"],
-    "paths": {}
+    "types": ["vite/client"]
   }
 }

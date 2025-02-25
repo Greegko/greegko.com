@@ -6,3 +6,5 @@ dist/
 .DS_Store
 
 packages/plugins-to-port
+
+.env.local

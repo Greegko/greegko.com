@@ -1,0 +1,25 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "name": "Solid Task Manager",
+      "description": "A simple task management app built with SolidJS.",
+      "tags": ["productivity", "tasks", "management"],
+      "stack": ["SolidJS", "TailwindCSS", "Node.js"]
+    },
+    {
+      "id": 2,
+      "name": "Dev Portfolio",
+      "description": "A personal developer portfolio showcasing projects and skills.",
+      "tags": ["portfolio", "developer", "showcase"],
+      "stack": ["SolidJS", "TailwindCSS", "Netlify"]
+    },
+    {
+      "id": 3,
+      "name": "E-Commerce Dashboard",
+      "description": "An admin dashboard for managing e-commerce stores.",
+      "tags": ["e-commerce", "dashboard", "admin"],
+      "stack": ["SolidJS", "TailwindCSS", "Express"]
+    }
+  ]
+}

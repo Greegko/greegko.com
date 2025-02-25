@@ -9,14 +9,16 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 18
-
-      - run: npm install
-      - run: npm run build
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - run: pnpm install
+      - run: pnpm build
 
       - name: push to ftp
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          server: greegko.com
-          username: u584298536
+          server: ${{ secrets.HOSTINGER_FTP_HOST }}
+          username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
           local-dir: ./packages/web/dist/
