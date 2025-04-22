@@ -1,9 +1,12 @@
 on: push
 name: Deploy website on push
 jobs:
-  web-deploy:
+  deploy:
     name: Deploy
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [cv]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -12,13 +15,15 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 9
+      - run: cd ./projects/${{ matrix.project }}
       - run: pnpm install
       - run: pnpm build
 
-      - name: push to ftp
+      - name: push cv to ftp
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: ${{ secrets.HOSTINGER_FTP_HOST }}
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: ./packages/web/dist/
+          local-dir: ./dist/
+          server-dir: ./${{ matrix.project }}
