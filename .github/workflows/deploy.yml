@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [cv]
+        project: [{ path: "cv", url: "cv" }, { path: "main", url: "" }]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -15,7 +15,7 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 9
-      - run: cd ./projects/${{ matrix.project }}
+      - run: cd ./projects/${{ matrix.project.path }}
       - run: pnpm install
       - run: pnpm build
 
@@ -25,5 +25,5 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_HOST }}
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: ./dist/
-          server-dir: ./${{ matrix.project }}
+          local-dir: ./dist
+          server-dir: ./${{ matrix.project.url }}

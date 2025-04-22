@@ -40,6 +40,18 @@ importers:
         specifier: 2.11.2
         version: 2.11.2(solid-js@1.9.5)(vite@6.1.1(jiti@2.4.2)(lightningcss@1.29.1))
 
+  packages/main:
+    devDependencies:
+      '@tailwindcss/vite':
+        specifier: 4.0.8
+        version: 4.0.8(vite@6.1.1(jiti@2.4.2)(lightningcss@1.29.1))
+      tailwindcss:
+        specifier: 4.0.8
+        version: 4.0.8
+      vite:
+        specifier: 6.1.1
+        version: 6.1.1(jiti@2.4.2)(lightningcss@1.29.1)
+
   packages/portfolio:
     dependencies:
       solid-js:
