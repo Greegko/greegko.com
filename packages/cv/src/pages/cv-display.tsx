@@ -58,7 +58,7 @@ export const CvDisplayPage = (props: { data: CVData }) => (
       </For>
     </section>
 
-    <section class="mt-4">
+    <section class="mt-4 break-inside-avoid">
       <h2 class="text-2xl font-bold text-blue-800">Education</h2>
       <p class="text-xl font-semibold text-gray-900">{props.data.education.university}</p>
       <p class="text-gray-600 italic">
@@ -67,7 +67,7 @@ export const CvDisplayPage = (props: { data: CVData }) => (
       <p class="text-gray-700 mt-2 text-lg">{props.data.education.degree}</p>
     </section>
 
-    <section class="mt-4">
+    <section class="mt-4 break-inside-avoid">
       <h2 class="text-2xl font-bold text-blue-800">Certifications</h2>
       <ul class="list-disc pl-5 text-gray-700 text-lg">
         <For each={props.data.certifications}>
@@ -80,7 +80,7 @@ export const CvDisplayPage = (props: { data: CVData }) => (
       </ul>
     </section>
 
-    <section class="mt-4">
+    <section class="mt-4 break-inside-avoid">
       <h2 class="text-2xl font-bold text-blue-800">Languages</h2>
       <p class="text-gray-700 text-lg">Native: {props.data.languages.native}</p>
       <ul class="list-disc pl-5 text-gray-700 text-lg">
@@ -94,12 +94,12 @@ export const CvDisplayPage = (props: { data: CVData }) => (
       </ul>
     </section>
 
-    <section class="mt-4">
+    <section class="mt-4 break-inside-avoid">
       <h2 class="text-2xl font-bold text-blue-800">Programming Interests</h2>
       <p class="text-gray-700 text-lg leading-relaxed">{props.data.programming_interests}</p>
     </section>
 
-    <section class="mt-4">
+    <section class="mt-4 break-inside-avoid">
       <h2 class="text-2xl font-bold text-blue-800">Hobbies</h2>
       <p class="text-gray-700 text-lg leading-relaxed">{props.data.hobbies}</p>
     </section>
