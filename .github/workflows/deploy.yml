@@ -15,7 +15,7 @@ jobs:
       - uses: pnpm/action-setup@v4
         with:
           version: 9
-      - run: cd ./projects/${{ matrix.project.path }}
+      - run: cd ./packages/${{ matrix.project.path }}
       - run: pnpm install
       - run: pnpm build
 
