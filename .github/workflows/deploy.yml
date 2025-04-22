@@ -27,4 +27,4 @@ jobs:
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
           local-dir: ./packages/${{ matrix.project.path }}/dist/
-          server-dir: ./${{ matrix.project.url }}
+          server-dir: ./${{ matrix.project.url }}/
