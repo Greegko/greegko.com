@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [{ localDir: "cv", serverDir: "subdomains/cv" }, { directory: "main", serverDir: "" }]
+        project: [{ localDir: "cv", serverDir: "subdomains/cv" }, { localDir: "main", serverDir: "" }]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
