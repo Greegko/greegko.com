@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        project: [{ path: "cv", url: "cv" }, { path: "main", url: "" }]
+        project: [{ localDir: "cv", serverDir: "subdomains/cv" }, { directory: "main", serverDir: "" }]
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v2
@@ -16,9 +16,9 @@ jobs:
         with:
           version: 9
       - run: pnpm install
-        working-directory: ./packages/${{ matrix.project.path }}
+        working-directory: ./packages/${{ matrix.project.localDir }}
       - run: pnpm build
-        working-directory: ./packages/${{ matrix.project.path }}
+        working-directory: ./packages/${{ matrix.project.localDir }}
 
       - name: push cv to ftp
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -26,5 +26,5 @@ jobs:
           server: ${{ secrets.HOSTINGER_FTP_HOST }}
           username: ${{ secrets.HOSTINGER_FTP_USERNAME }}
           password: ${{ secrets.HOSTINGER_FTP_PASSWORD }}
-          local-dir: ./packages/${{ matrix.project.path }}/dist/
-          server-dir: ./${{ matrix.project.url }}/
+          local-dir: ./packages/${{ matrix.project.localDir }}/dist/
+          server-dir: ./${{ matrix.project.serverDir }}/
